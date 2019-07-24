@@ -1,0 +1,3 @@
+Square: 4 numRect: 3
+Square: 1 numRect: 3
+Square: 9 numRect: 3

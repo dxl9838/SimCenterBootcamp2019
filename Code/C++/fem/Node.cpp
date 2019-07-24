@@ -1,4 +1,6 @@
+#include <iostream>
 #include "Node.h"
+//using namespace std;
 
 Node::Node(int id, double x, double y)
   :tag(id)
@@ -26,7 +28,7 @@ Node::GetDisp() {
 }
 
 void 
-Node::Print(ostream &s){
+Node::Print(std::ostream &s){
   s << "Node : " << tag;
   s << " Crds: " << coord[0] << " " << coord[1];
   s << " Disp: " << disp[0] << " " <<  disp[1] << " " <<  disp[2] << "\n";;

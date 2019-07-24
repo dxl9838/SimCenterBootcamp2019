@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Node.h"
 #include "Domain.h"
+#include "Constraint.h"
 
 int main(int argc, char **argv) {
   Node *node1 = new Node(1,0.0,0.0);
@@ -10,6 +11,9 @@ int main(int argc, char **argv) {
   theDomain.AddNode(node1);
   theDomain.AddNode(node2);
   theDomain.AddNode(node3);
+
+  Constraint *constraint1 = new Constraint(1,1,true,true,false);
+  theDomain.AddConstraint(constraint1);
 
   theDomain.Print(std::cout);
 

@@ -1,4 +1,5 @@
 #include "node.h"
+#include "constraint.h"
 #include "domain2.h"
 
 int main(int argc, char **argv) {
@@ -7,6 +8,8 @@ int main(int argc, char **argv) {
   domainAddNode(&theDomain, 1, 0.0, 0.0);
   domainAddNode(&theDomain, 2, 0.0, 2.0);
   domainAddNode(&theDomain, 3, 1.0, 1.0);
+  theDomain.theConstraints=0;
+  domainAddConstraint(&theDomain, 1, 1, true, true, false);
   
   domainPrint(&theDomain);
 

@@ -9,7 +9,7 @@ class Node {
   int GetTag(void); 
   const double *GetCoord();
   const double *GetDisp();
-  void Print(ostream &s);
+  void Print(std::ostream &s);
  private:
   int tag;
   double coord[2];

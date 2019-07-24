@@ -1,11 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "domain.h"
+#include "domain2.h"
 #include "node.h"
+#include "constraint.h"
 
 void domainPrint(Domain *theDomain) {
   printf("The Nodes:\n");
   domainPrintNodes(theDomain);
+  printf("The Constraints:\n");
+  domainPrintConstraints(theDomain);
 }
 
 void domainAddNode(Domain *theDomain, int tag, double crd1, double crd2) {
@@ -35,6 +38,39 @@ Node *domainGetNode(Domain *theDomain, int nodeTag) {
       return theCurrentNode;
     } else {
       theCurrentNode = theCurrentNode->next;
+    }
+  };
+  return NULL;
+}
+
+void domainAddConstraint(Domain *theDomain, int tag, int nodeTag, bool c1, bool c2, bool c3) {
+  Constraint *theNextConstraint = (Constraint *)malloc(sizeof(Constraint));
+  constraintSetup(theNextConstraint, tag, nodeTag, c1, c2, c3);
+
+  if (theDomain->theConstraints != NULL) {
+    theNextConstraint->next = theDomain->theConstraints;
+  } else {
+    theNextConstraint->next = NULL;
+  }
+  theDomain->theConstraints = theNextConstraint;
+
+}
+
+void domainPrintConstraints(Domain *theDomain) {
+  Constraint *theCurrentConstraint = theDomain->theConstraints;
+  while (theCurrentConstraint != NULL) {
+    constraintPrint(theCurrentConstraint);
+    theCurrentConstraint = theCurrentConstraint->next;
+  };
+}
+
+Constraint *domainGetConstraint(Domain *theDomain, int tag) {
+  Constraint *theCurrentConstraint = theDomain->theConstraints;
+  while (theCurrentConstraint != NULL) {
+    if (theCurrentConstraint->tag == tag) {
+      return theCurrentConstraint;
+    } else {
+      theCurrentConstraint = theCurrentConstraint->next;
     }
   };
   return NULL;
