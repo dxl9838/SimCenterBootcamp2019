@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <omp.h>
 #include <time.h>
-static int long numSteps=100000;
+static int long numSteps=1000000000;
 int main() {
-    double pi=0; double time=0;
+    double pi=0;
     //your code
     double dx=1.0/numSteps;
-    double x=dx/2;
+    double x=dx/2.0;
     double start=omp_get_wtime();
     for (int i=0;i<numSteps;i++){
         //your code
