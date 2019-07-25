@@ -1,5 +1,10 @@
 def fib(n):
-    an = ...
+    if n<0:
+        print("error")
+    if n==0 or n==1:
+        an=1
+    else:
+        an = fib(n-1)+fib(n-2)
     return an
 
 # the actual execution stuff
