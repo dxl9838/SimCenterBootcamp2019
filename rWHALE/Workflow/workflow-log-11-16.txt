@@ -1,0 +1,1075 @@
+################################################################################
+Start of Log
+################################################################################
+workflow-log-11-16.txt
+################################################################################
+command line:
+/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/GenericBimDatabase /home/student/Documents/SimCenterBootcamp2019/rWHALE/Workflow/AnchorageM7.0/buildings11-16.json -buildingsFile /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv -Max 16 -Min 11 -getRV
+
+################################################################################
+output from process:
+Buildings File: /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv
+GenericBimDatabase: min: 11 max: 16
+
+
+################################################################################
+command line:
+python3 /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/NNGM.py -filenameBIM 11-BIM.json -filenameEVENT 11-EVENT.json -recordsFolder /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageM7GM/ -groundMotions /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageM7GMs.json -getRV
+
+################################################################################
+output from process:
+
+
+################################################################################
+command line:
+/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/MDOF-LU -filenameBIM 11-BIM.json -filenameEVENT 11-EVENT.json -filenameSAM 11-SAM.json -hazusData /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/HazusData.txt -getRV
+
+################################################################################
+output from process:
+
+
+################################################################################
+command line:
+/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/StandardEarthquakeEDP -filenameBIM 11-BIM.json -filenameEVENT 11-EVENT.json -filenameSAM 11-SAM.json -filenameEDP 11-EDP.json -getRV
+
+################################################################################
+output from process:
+GETRV - TRUE
+
+
+################################################################################
+command line:
+python /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/OpenSeesSimulation.py -filenameBIM 11-BIM.json -filenameSAM 11-SAM.json -filenameEVENT 11-EVENT.json -filenameEDP 11-EDP.json -filenameSIM 11-SIM.json -getRV
+
+################################################################################
+output from process:
+filenameBIM: 11-BIM.json
+filenameSAM: 11-SAM.json
+filenameEVENT: 11-EVENT.json
+filenameSIMULATION: 11-SIM.json
+
+
+################################################################################
+command line:
+python /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/DakotaFEM.py -filenameBIM 11-BIM.json -filenameSAM 11-SAM.json -filenameEVENT 11-EVENT.json -filenameEDP 11-EDP.json -filenameLOSS 11-DL.json -filenameSIM 11-SIM.json -driverFile 11-driver -keepSamples True -seed 1 -concurrency 4 -samples 4
+
+################################################################################
+output from process:
+Buildings File: /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv
+Buildings File: /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv
+Buildings File: /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv
+Buildings File: /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv
+No seismic zone specificed, Assuming seismic zone 4.
+GETRV - FALSE
+No seismic zone specificed, Assuming seismic zone 4.
+GETRV - FALSE
+No seismic zone specificed, Assuming seismic zone 4.
+No seismic zone specificed, Assuming seismic zone 4.
+GETRV - FALSE
+GETRV - FALSE
+6
+accel_X
+accel_Y
+accel_X
+accel_Y
+
+
+         OpenSees -- Open System For Earthquake Engineering Simulation
+                 Pacific Earthquake Engineering Research Center
+                        Version 2.5.0 (rev 6248) 32-Bit
+
+      (c) Copyright 1999-2016 The Regents of the University of California
+                              All Rights Reserved
+  (Copyright and Disclaimer @ http://www.berkeley.edu/OpenSees/copyright.html)
+
+
+WARNING ZeroLength::setDomain(): Element 1 has L= 3.0973, which is greater than the tolerance
+6
+accel_X
+accel_Y
+accel_X
+accel_Y
+
+
+         OpenSees -- Open System For Earthquake Engineering Simulation
+                 Pacific Earthquake Engineering Research Center
+                        Version 2.5.0 (rev 6248) 32-Bit
+
+      (c) Copyright 1999-2016 The Regents of the University of California
+                              All Rights Reserved
+  (Copyright and Disclaimer @ http://www.berkeley.edu/OpenSees/copyright.html)
+
+
+WARNING ZeroLength::setDomain(): Element 1 has L= 3.24919, which is greater than the tolerance
+6
+accel_X
+accel_Y
+accel_X
+accel_Y
+6
+accel_X
+accel_Y
+accel_X
+accel_Y
+
+
+         OpenSees -- Open System For Earthquake Engineering Simulation
+                 Pacific Earthquake Engineering Research Center
+                        Version 2.5.0 (rev 6248) 32-Bit
+
+      (c) Copyright 1999-2016 The Regents of the University of California
+                              All Rights Reserved
+  (Copyright and Disclaimer @ http://www.berkeley.edu/OpenSees/copyright.html)
+
+
+
+
+         OpenSees -- Open System For Earthquake Engineering Simulation
+                 Pacific Earthquake Engineering Research Center
+                        Version 2.5.0 (rev 6248) 32-Bit
+
+      (c) Copyright 1999-2016 The Regents of the University of California
+                              All Rights Reserved
+  (Copyright and Disclaimer @ http://www.berkeley.edu/OpenSees/copyright.html)
+
+
+WARNING ZeroLength::setDomain(): Element 1 has L= 3.46144, which is greater than the tolerance
+WARNING ZeroLength::setDomain(): Element 1 has L= 2.96508, which is greater than the tolerance
+num args: 5
+FEMAP58-LU: HI
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.021a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2061.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: F1012.001 needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: Unable to deal with EDP type 'Effective Drift' - B1044.091, using 'Story Drift Ratio' instead.
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/num args: 5
+FEMAP58-LU: HI
+num args: 5
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FEMAP58-LU: HI
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.021a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2061.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: pathnum args: 5
+/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.021a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2061.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: F1012.001 needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: pathFC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves//home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FEMAP58-LU: HI
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: Unable to deal with EDP type 'Effective Drift' - B1044.091, using 'Story Drift Ratio' instead.
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: F1012.001 needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.021a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: Unable to deal with EDP type 'Effective Drift' - B1044.091, using 'Story Drift Ratio' instead.
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2061.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: F1012.001 needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: Unable to deal with EDP type 'Effective Drift' - B1044.091, using 'Story Drift Ratio' instead.
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/1.599500 3.160050 0.004120 0.000455 NUM_EDP= 0
+1.599500 3.245110 0.005239 0.002490 NUM_EDP= 0
+1.599500 3.217190 0.005446 0.002194 NUM_EDP= 0
+1.599500 3.027160 0.006197 0.001559 NUM_EDP= 0
+NUM_EDP= 4
+1.599500 3.245110 0.005239 0.002490 
+1.599500 3.217190 0.005446 0.002194 
+1.599500 3.160050 0.004120 0.000455 
+1.599500 3.027160 0.006197 0.001559 
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/GenericBimDatabase" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/Workflow/AnchorageM7.0/buildings11-16.json" "-buildingsFile" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv" "-Max" "16" "-Min" "11" 
+
+"python3" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/NNGM.py" "-filenameBIM" "11-BIM.json" "-filenameEVENT" "11-EVENT.json" "-recordsFolder" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageM7GM/" "-groundMotions" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageM7GMs.json" 
+
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/MDOF-LU" "-filenameBIM" "11-BIM.json" "-filenameEVENT" "11-EVENT.json" "-filenameSAM" "11-SAM.json" "-hazusData" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/HazusData.txt" 
+
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/StandardEarthquakeEDP" "-filenameBIM" "11-BIM.json" "-filenameEVENT" "11-EVENT.json" "-filenameSAM" "11-SAM.json" "-filenameEDP" "11-EDP.json" 
+
+"python" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/OpenSeesSimulation.py" "-filenameBIM" "11-BIM.json" "-filenameSAM" "11-SAM.json" "-filenameEVENT" "11-EVENT.json" "-filenameEDP" "11-EDP.json" "-filenameSIM" "11-SIM.json" 
+
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/FEMAP58_LU" "-filenameBIM" "11-BIM.json" "-filenameEDP" "11-EDP.json" "-filenameLOSS" "11-DL.json" "-filenameSettings" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/settings.ini" "-pathNormative" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/normative/" "-pathCurves" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/" 
+
+
+################################################################################
+command line:
+python3 /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/NNGM.py -filenameBIM 12-BIM.json -filenameEVENT 12-EVENT.json -recordsFolder /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageM7GM/ -groundMotions /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageM7GMs.json -getRV
+
+################################################################################
+output from process:
+
+
+################################################################################
+command line:
+/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/MDOF-LU -filenameBIM 12-BIM.json -filenameEVENT 12-EVENT.json -filenameSAM 12-SAM.json -hazusData /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/HazusData.txt -getRV
+
+################################################################################
+output from process:
+
+
+################################################################################
+command line:
+/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/StandardEarthquakeEDP -filenameBIM 12-BIM.json -filenameEVENT 12-EVENT.json -filenameSAM 12-SAM.json -filenameEDP 12-EDP.json -getRV
+
+################################################################################
+output from process:
+GETRV - TRUE
+
+
+################################################################################
+command line:
+python /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/OpenSeesSimulation.py -filenameBIM 12-BIM.json -filenameSAM 12-SAM.json -filenameEVENT 12-EVENT.json -filenameEDP 12-EDP.json -filenameSIM 12-SIM.json -getRV
+
+################################################################################
+output from process:
+filenameBIM: 12-BIM.json
+filenameSAM: 12-SAM.json
+filenameEVENT: 12-EVENT.json
+filenameSIMULATION: 12-SIM.json
+
+
+################################################################################
+command line:
+python /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/DakotaFEM.py -filenameBIM 12-BIM.json -filenameSAM 12-SAM.json -filenameEVENT 12-EVENT.json -filenameEDP 12-EDP.json -filenameLOSS 12-DL.json -filenameSIM 12-SIM.json -driverFile 12-driver -keepSamples True -seed 1 -concurrency 4 -samples 4
+
+################################################################################
+output from process:
+Buildings File: /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv
+Buildings File: /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv
+Buildings File: /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv
+Buildings File: /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv
+No seismic zone specificed, Assuming seismic zone 4.
+No seismic zone specificed, Assuming seismic zone 4.
+No seismic zone specificed, Assuming seismic zone 4.
+GETRV - FALSE
+GETRV - FALSE
+No seismic zone specificed, Assuming seismic zone 4.
+GETRV - FALSE
+GETRV - FALSE
+6
+accel_X
+accel_Y
+accel_X
+accel_Y
+
+
+         OpenSees -- Open System For Earthquake Engineering Simulation
+                 Pacific Earthquake Engineering Research Center
+                        Version 2.5.0 (rev 6248) 32-Bit
+
+      (c) Copyright 1999-2016 The Regents of the University of California
+                              All Rights Reserved
+  (Copyright and Disclaimer @ http://www.berkeley.edu/OpenSees/copyright.html)
+
+
+6
+accel_X
+accel_Y
+accel_X
+accel_Y
+WARNING ZeroLength::setDomain(): Element 1 has L= 3.0973, which is greater than the tolerance
+6
+accel_X
+accel_Y
+accel_X
+accel_Y
+
+
+         OpenSees -- Open System For Earthquake Engineering Simulation
+                 Pacific Earthquake Engineering Research Center
+                        Version 2.5.0 (rev 6248) 32-Bit
+
+      (c) Copyright 1999-2016 The Regents of the University of California
+                              All Rights Reserved
+  (Copyright and Disclaimer @ http://www.berkeley.edu/OpenSees/copyright.html)
+
+
+
+
+         OpenSees -- Open System For Earthquake Engineering Simulation
+                 Pacific Earthquake Engineering Research Center
+                        Version 2.5.0 (rev 6248) 32-Bit
+
+      (c) Copyright 1999-2016 The Regents of the University of California
+                              All Rights Reserved
+  (Copyright and Disclaimer @ http://www.berkeley.edu/OpenSees/copyright.html)
+
+
+WARNING ZeroLength::setDomain(): Element 1 has L= WARNING ZeroLength::setDomain(): Element 3.24919, which is greater than the tolerance
+1 has L= 2.96508, which is greater than the tolerance
+6
+accel_X
+accel_Y
+accel_X
+accel_Y
+
+
+         OpenSees -- Open System For Earthquake Engineering Simulation
+                 Pacific Earthquake Engineering Research Center
+                        Version 2.5.0 (rev 6248) 32-Bit
+
+      (c) Copyright 1999-2016 The Regents of the University of California
+                              All Rights Reserved
+  (Copyright and Disclaimer @ http://www.berkeley.edu/OpenSees/copyright.html)
+
+
+WARNING ZeroLength::setDomain(): Element 1 has L= 3.46144, which is greater than the tolerance
+num args: 5
+FEMAP58-LU: HI
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/num args: 5
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.021a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2061.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FEMAP58-LU: HI
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: F1012.001 needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: Unable to deal with EDP type 'Effective Drift' - B1044.091, using 'Story Drift Ratio' instead.
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.021a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2061.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/num args: 5
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FEMAP58-LU: HI
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: F1012.001 needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: pathnum args: 5
+/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: Unable to deal with EDP type 'Effective Drift' - B1044.091, using 'Story Drift Ratio' instead.
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.021a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2061.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FEMAP58-LU: HI
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: F1012.001 needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: Unable to deal with EDP type 'Effective Drift' - B1044.091, using 'Story Drift Ratio' instead.
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.021a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2061.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: F1012.001 needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: Unable to deal with EDP type 'Effective Drift' - B1044.091, using 'Story Drift Ratio' instead.
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/1.599500 3.217190 0.005446 0.002194 NUM_EDP= 0
+1.599500 3.245110 0.005239 0.002490 NUM_EDP= 0
+1.599500 3.160050 0.004120 0.000455 NUM_EDP= 0
+1.599500 3.027160 0.006197 0.001559 NUM_EDP= 0
+NUM_EDP= 4
+1.599500 3.245110 0.005239 0.002490 
+1.599500 3.217190 0.005446 0.002194 
+1.599500 3.160050 0.004120 0.000455 
+1.599500 3.027160 0.006197 0.001559 
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/GenericBimDatabase" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/Workflow/AnchorageM7.0/buildings11-16.json" "-buildingsFile" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv" "-Max" "16" "-Min" "11" 
+
+"python3" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/NNGM.py" "-filenameBIM" "12-BIM.json" "-filenameEVENT" "12-EVENT.json" "-recordsFolder" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageM7GM/" "-groundMotions" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageM7GMs.json" 
+
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/MDOF-LU" "-filenameBIM" "12-BIM.json" "-filenameEVENT" "12-EVENT.json" "-filenameSAM" "12-SAM.json" "-hazusData" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/HazusData.txt" 
+
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/StandardEarthquakeEDP" "-filenameBIM" "12-BIM.json" "-filenameEVENT" "12-EVENT.json" "-filenameSAM" "12-SAM.json" "-filenameEDP" "12-EDP.json" 
+
+"python" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/OpenSeesSimulation.py" "-filenameBIM" "12-BIM.json" "-filenameSAM" "12-SAM.json" "-filenameEVENT" "12-EVENT.json" "-filenameEDP" "12-EDP.json" "-filenameSIM" "12-SIM.json" 
+
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/FEMAP58_LU" "-filenameBIM" "12-BIM.json" "-filenameEDP" "12-EDP.json" "-filenameLOSS" "12-DL.json" "-filenameSettings" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/settings.ini" "-pathNormative" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/normative/" "-pathCurves" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/" 
+
+
+################################################################################
+command line:
+python3 /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/NNGM.py -filenameBIM 13-BIM.json -filenameEVENT 13-EVENT.json -recordsFolder /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageM7GM/ -groundMotions /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageM7GMs.json -getRV
+
+################################################################################
+output from process:
+
+
+################################################################################
+command line:
+/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/MDOF-LU -filenameBIM 13-BIM.json -filenameEVENT 13-EVENT.json -filenameSAM 13-SAM.json -hazusData /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/HazusData.txt -getRV
+
+################################################################################
+output from process:
+
+
+################################################################################
+command line:
+/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/StandardEarthquakeEDP -filenameBIM 13-BIM.json -filenameEVENT 13-EVENT.json -filenameSAM 13-SAM.json -filenameEDP 13-EDP.json -getRV
+
+################################################################################
+output from process:
+GETRV - TRUE
+
+
+################################################################################
+command line:
+python /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/OpenSeesSimulation.py -filenameBIM 13-BIM.json -filenameSAM 13-SAM.json -filenameEVENT 13-EVENT.json -filenameEDP 13-EDP.json -filenameSIM 13-SIM.json -getRV
+
+################################################################################
+output from process:
+filenameBIM: 13-BIM.json
+filenameSAM: 13-SAM.json
+filenameEVENT: 13-EVENT.json
+filenameSIMULATION: 13-SIM.json
+
+
+################################################################################
+command line:
+python /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/DakotaFEM.py -filenameBIM 13-BIM.json -filenameSAM 13-SAM.json -filenameEVENT 13-EVENT.json -filenameEDP 13-EDP.json -filenameLOSS 13-DL.json -filenameSIM 13-SIM.json -driverFile 13-driver -keepSamples True -seed 1 -concurrency 4 -samples 4
+
+################################################################################
+output from process:
+Buildings File: /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv
+Buildings File: /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv
+Buildings File: /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv
+Buildings File: /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv
+No seismic zone specificed, Assuming seismic zone 4.
+GETRV - FALSE
+No seismic zone specificed, Assuming seismic zone 4.
+GETRV - FALSE
+No seismic zone specificed, Assuming seismic zone 4.
+GETRV - FALSE
+No seismic zone specificed, Assuming seismic zone 4.
+GETRV - FALSE
+6
+accel_X
+accel_Y
+accel_X
+accel_Y
+
+
+         OpenSees -- Open System For Earthquake Engineering Simulation
+                 Pacific Earthquake Engineering Research Center
+                        Version 2.5.0 (rev 6248) 32-Bit
+
+      (c) Copyright 1999-2016 The Regents of the University of California
+                              All Rights Reserved
+  (Copyright and Disclaimer @ http://www.berkeley.edu/OpenSees/copyright.html)
+
+
+WARNING ZeroLength::setDomain(): Element 1 has L= 3.46144, which is greater than the tolerance
+WARNING ZeroLength::setDomain(): Element 2 has L= 3.46143, which is greater than the tolerance
+6
+accel_X
+accel_Y
+accel_X
+accel_Y
+
+
+         OpenSees -- Open System For Earthquake Engineering Simulation
+                 Pacific Earthquake Engineering Research Center
+                        Version 2.5.0 (rev 6248) 32-Bit
+
+      (c) Copyright 1999-2016 The Regents of the University of California
+                              All Rights Reserved
+  (Copyright and Disclaimer @ http://www.berkeley.edu/OpenSees/copyright.html)
+
+
+WARNING ZeroLength::setDomain(): Element 1 has L= 3.0973, which is greater than the tolerance
+WARNING ZeroLength::setDomain(): Element 2 has L= 3.09731, which is greater than the tolerance
+6
+accel_X
+accel_Y
+accel_X
+accel_Y
+
+
+         OpenSees -- Open System For Earthquake Engineering Simulation
+                 Pacific Earthquake Engineering Research Center
+                        Version 2.5.0 (rev 6248) 32-Bit
+
+      (c) Copyright 1999-2016 The Regents of the University of California
+                              All Rights Reserved
+  (Copyright and Disclaimer @ http://www.berkeley.edu/OpenSees/copyright.html)
+
+
+6
+accel_X
+accel_Y
+accel_X
+accel_Y
+WARNING ZeroLength::setDomain(): Element 1 has L= 3.24919, which is greater than the tolerance
+WARNING ZeroLength::setDomain(): Element 2 has L= 3.24919, which is greater than the tolerance
+
+
+         OpenSees -- Open System For Earthquake Engineering Simulation
+                 Pacific Earthquake Engineering Research Center
+                        Version 2.5.0 (rev 6248) 32-Bit
+
+      (c) Copyright 1999-2016 The Regents of the University of California
+                              All Rights Reserved
+  (Copyright and Disclaimer @ http://www.berkeley.edu/OpenSees/copyright.html)
+
+
+WARNING ZeroLength::setDomain(): Element 1 has L= 2.96508, which is greater than the tolerance
+WARNING ZeroLength::setDomain(): Element 2 has L= 2.96508, which is greater than the tolerance
+num args: 5
+FEMAP58-LU: HI
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.021a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2061.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: F1012.001 needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: Unable to deal with EDP type 'Effective Drift' - B1044.091, using 'Story Drift Ratio' instead.
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/num args: 5
+FEMAP58-LU: HI
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/num args: 5
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.021a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2061.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FEMAP58-LU: HI
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/num args: 5
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: F1012.001 needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.011a needs user-defined data
+FC: pathFC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves//home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.021a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2061.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: Unable to deal with EDP type 'Effective Drift' - B1044.091, using 'Story Drift Ratio' instead.
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FEMAP58-LU: HI
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: F1012.001 needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: Unable to deal with EDP type 'Effective Drift' - B1044.091, using 'Story Drift Ratio' instead.
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.021a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2061.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: F1012.001 needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: Unable to deal with EDP type 'Effective Drift' - B1044.091, using 'Story Drift Ratio' instead.
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/1.599500 3.536470 3.733740 0.006537 0.004274 0.000092 NUM_EDP= 0
+1.599500 2.141670 2.921060 0.017054 0.010384 0.000686 NUM_EDP= 0
+1.599500 3.432310 2.985480 0.012118 0.006715 0.002897 NUM_EDP= 0
+1.599500 2.923410 2.661690 0.010443 0.006499 0.003540 NUM_EDP= 0
+NUM_EDP= 6
+1.599500 2.923410 2.661690 0.010443 0.006499 0.003540 
+1.599500 3.432310 2.985480 0.012118 0.006715 0.002897 
+1.599500 3.536470 3.733740 0.006537 0.004274 0.000092 
+1.599500 2.141670 2.921060 0.017054 0.010384 0.000686 
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/GenericBimDatabase" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/Workflow/AnchorageM7.0/buildings11-16.json" "-buildingsFile" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv" "-Max" "16" "-Min" "11" 
+
+"python3" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/NNGM.py" "-filenameBIM" "13-BIM.json" "-filenameEVENT" "13-EVENT.json" "-recordsFolder" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageM7GM/" "-groundMotions" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageM7GMs.json" 
+
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/MDOF-LU" "-filenameBIM" "13-BIM.json" "-filenameEVENT" "13-EVENT.json" "-filenameSAM" "13-SAM.json" "-hazusData" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/HazusData.txt" 
+
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/StandardEarthquakeEDP" "-filenameBIM" "13-BIM.json" "-filenameEVENT" "13-EVENT.json" "-filenameSAM" "13-SAM.json" "-filenameEDP" "13-EDP.json" 
+
+"python" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/OpenSeesSimulation.py" "-filenameBIM" "13-BIM.json" "-filenameSAM" "13-SAM.json" "-filenameEVENT" "13-EVENT.json" "-filenameEDP" "13-EDP.json" "-filenameSIM" "13-SIM.json" 
+
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/FEMAP58_LU" "-filenameBIM" "13-BIM.json" "-filenameEDP" "13-EDP.json" "-filenameLOSS" "13-DL.json" "-filenameSettings" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/settings.ini" "-pathNormative" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/normative/" "-pathCurves" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/" 
+
+
+################################################################################
+command line:
+python3 /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/NNGM.py -filenameBIM 14-BIM.json -filenameEVENT 14-EVENT.json -recordsFolder /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageM7GM/ -groundMotions /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageM7GMs.json -getRV
+
+################################################################################
+output from process:
+
+
+################################################################################
+command line:
+/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/MDOF-LU -filenameBIM 14-BIM.json -filenameEVENT 14-EVENT.json -filenameSAM 14-SAM.json -hazusData /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/HazusData.txt -getRV
+
+################################################################################
+output from process:
+
+
+################################################################################
+command line:
+/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/StandardEarthquakeEDP -filenameBIM 14-BIM.json -filenameEVENT 14-EVENT.json -filenameSAM 14-SAM.json -filenameEDP 14-EDP.json -getRV
+
+################################################################################
+output from process:
+GETRV - TRUE
+
+
+################################################################################
+command line:
+python /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/OpenSeesSimulation.py -filenameBIM 14-BIM.json -filenameSAM 14-SAM.json -filenameEVENT 14-EVENT.json -filenameEDP 14-EDP.json -filenameSIM 14-SIM.json -getRV
+
+################################################################################
+output from process:
+filenameBIM: 14-BIM.json
+filenameSAM: 14-SAM.json
+filenameEVENT: 14-EVENT.json
+filenameSIMULATION: 14-SIM.json
+
+
+################################################################################
+command line:
+python /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/DakotaFEM.py -filenameBIM 14-BIM.json -filenameSAM 14-SAM.json -filenameEVENT 14-EVENT.json -filenameEDP 14-EDP.json -filenameLOSS 14-DL.json -filenameSIM 14-SIM.json -driverFile 14-driver -keepSamples True -seed 1 -concurrency 4 -samples 4
+
+################################################################################
+output from process:
+Buildings File: Buildings File: /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv
+
+Buildings File: /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv
+Buildings File: /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv
+No seismic zone specificed, Assuming seismic zone 4.
+GETRV - FALSE
+No seismic zone specificed, Assuming seismic zone 4.
+GETRV - FALSE
+No seismic zone specificed, Assuming seismic zone 4.
+GETRV - FALSE
+No seismic zone specificed, Assuming seismic zone 4.
+GETRV - FALSE
+6
+accel_X
+accel_Y
+accel_X
+accel_Y
+
+
+         OpenSees -- Open System For Earthquake Engineering Simulation
+                 Pacific Earthquake Engineering Research Center
+                        Version 2.5.0 (rev 6248) 32-Bit
+
+      (c) Copyright 1999-2016 The Regents of the University of California
+                              All Rights Reserved
+  (Copyright and Disclaimer @ http://www.berkeley.edu/OpenSees/copyright.html)
+
+
+6
+accel_X
+accel_Y
+accel_X
+accel_Y
+WARNING ZeroLength::setDomain(): Element 1 has L= 2.96508, which is greater than the tolerance
+WARNING ZeroLength::setDomain(): Element 2 has L= 2.96508, which is greater than the tolerance
+
+
+         OpenSees -- Open System For Earthquake Engineering Simulation
+                 Pacific Earthquake Engineering Research Center
+                        Version 2.5.0 (rev 6248) 32-Bit
+
+      (c) Copyright 1999-2016 The Regents of the University of California
+                              All Rights Reserved
+  (Copyright and Disclaimer @ http://www.berkeley.edu/OpenSees/copyright.html)
+
+
+WARNING ZeroLength::setDomain(): Element 1 has L= 3.46144, which is greater than the tolerance
+WARNING ZeroLength::setDomain(): Element 2 has L= 3.46143, which is greater than the tolerance
+6
+accel_X
+accel_Y
+accel_X
+accel_Y
+
+
+         OpenSees -- Open System For Earthquake Engineering Simulation
+                 Pacific Earthquake Engineering Research Center
+                        Version 2.5.0 (rev 6248) 32-Bit
+
+      (c) Copyright 1999-2016 The Regents of the University of California
+                              All Rights Reserved
+  (Copyright and Disclaimer @ http://www.berkeley.edu/OpenSees/copyright.html)
+
+
+WARNING ZeroLength::setDomain(): Element 1 has L= 3.24919, which is greater than the tolerance
+WARNING ZeroLength::setDomain(): Element 2 has L= 3.24919, which is greater than the tolerance
+6
+accel_X
+accel_Y
+accel_X
+accel_Y
+
+
+         OpenSees -- Open System For Earthquake Engineering Simulation
+                 Pacific Earthquake Engineering Research Center
+                        Version 2.5.0 (rev 6248) 32-Bit
+
+      (c) Copyright 1999-2016 The Regents of the University of California
+                              All Rights Reserved
+  (Copyright and Disclaimer @ http://www.berkeley.edu/OpenSees/copyright.html)
+
+
+WARNING ZeroLength::setDomain(): Element 1 has L= 3.0973, which is greater than the tolerance
+WARNING ZeroLength::setDomain(): Element 2 has L= 3.09731, which is greater than the tolerance
+num args: 5
+FEMAP58-LU: HI
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.021a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2061.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: F1012.001 needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: Unable to deal with EDP type 'Effective Drift' - B1044.091, using 'Story Drift Ratio' instead.
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/num args: 5
+FEMAP58-LU: HI
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/num args: 5
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.021a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2061.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FEMAP58-LU: HI
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: F1012.001 needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: Unable to deal with EDP type 'Effective Drift' - B1044.091, using 'Story Drift Ratio' instead.
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.021a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2061.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: F1012.001 needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: Unable to deal with EDP type 'Effective Drift' - B1044.091, using 'Story Drift Ratio' instead.
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/num args: 5
+FEMAP58-LU: HI
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.021a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2061.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: F1012.001 needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: Unable to deal with EDP type 'Effective Drift' - B1044.091, using 'Story Drift Ratio' instead.
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/1.599500 2.141640 2.921060 0.017054 0.010384 0.000686 NUM_EDP= 0
+1.599500 2.923360 2.661700 0.010443 0.006499 0.003540 NUM_EDP= 0
+1.599500 3.432330 2.985480 0.012118 0.006715 0.002897 NUM_EDP= 0
+1.599500 3.536430 3.733730 0.006537 0.004274 0.000092 NUM_EDP= 0
+NUM_EDP= 6
+1.599500 2.923360 2.661700 0.010443 0.006499 0.003540 
+1.599500 3.432330 2.985480 0.012118 0.006715 0.002897 
+1.599500 3.536430 3.733730 0.006537 0.004274 0.000092 
+1.599500 2.141640 2.921060 0.017054 0.010384 0.000686 
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/GenericBimDatabase" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/Workflow/AnchorageM7.0/buildings11-16.json" "-buildingsFile" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv" "-Max" "16" "-Min" "11" 
+
+"python3" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/NNGM.py" "-filenameBIM" "14-BIM.json" "-filenameEVENT" "14-EVENT.json" "-recordsFolder" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageM7GM/" "-groundMotions" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageM7GMs.json" 
+
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/MDOF-LU" "-filenameBIM" "14-BIM.json" "-filenameEVENT" "14-EVENT.json" "-filenameSAM" "14-SAM.json" "-hazusData" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/HazusData.txt" 
+
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/StandardEarthquakeEDP" "-filenameBIM" "14-BIM.json" "-filenameEVENT" "14-EVENT.json" "-filenameSAM" "14-SAM.json" "-filenameEDP" "14-EDP.json" 
+
+"python" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/OpenSeesSimulation.py" "-filenameBIM" "14-BIM.json" "-filenameSAM" "14-SAM.json" "-filenameEVENT" "14-EVENT.json" "-filenameEDP" "14-EDP.json" "-filenameSIM" "14-SIM.json" 
+
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/FEMAP58_LU" "-filenameBIM" "14-BIM.json" "-filenameEDP" "14-EDP.json" "-filenameLOSS" "14-DL.json" "-filenameSettings" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/settings.ini" "-pathNormative" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/normative/" "-pathCurves" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/" 
+
+
+################################################################################
+command line:
+python3 /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/NNGM.py -filenameBIM 15-BIM.json -filenameEVENT 15-EVENT.json -recordsFolder /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageM7GM/ -groundMotions /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageM7GMs.json -getRV
+
+################################################################################
+output from process:
+
+
+################################################################################
+command line:
+/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/MDOF-LU -filenameBIM 15-BIM.json -filenameEVENT 15-EVENT.json -filenameSAM 15-SAM.json -hazusData /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/HazusData.txt -getRV
+
+################################################################################
+output from process:
+
+
+################################################################################
+command line:
+/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/StandardEarthquakeEDP -filenameBIM 15-BIM.json -filenameEVENT 15-EVENT.json -filenameSAM 15-SAM.json -filenameEDP 15-EDP.json -getRV
+
+################################################################################
+output from process:
+GETRV - TRUE
+
+
+################################################################################
+command line:
+python /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/OpenSeesSimulation.py -filenameBIM 15-BIM.json -filenameSAM 15-SAM.json -filenameEVENT 15-EVENT.json -filenameEDP 15-EDP.json -filenameSIM 15-SIM.json -getRV
+
+################################################################################
+output from process:
+filenameBIM: 15-BIM.json
+filenameSAM: 15-SAM.json
+filenameEVENT: 15-EVENT.json
+filenameSIMULATION: 15-SIM.json
+
+
+################################################################################
+command line:
+python /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/DakotaFEM.py -filenameBIM 15-BIM.json -filenameSAM 15-SAM.json -filenameEVENT 15-EVENT.json -filenameEDP 15-EDP.json -filenameLOSS 15-DL.json -filenameSIM 15-SIM.json -driverFile 15-driver -keepSamples True -seed 1 -concurrency 4 -samples 4
+
+################################################################################
+output from process:
+Buildings File: /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv
+Buildings File: /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv
+Buildings File: /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv
+Buildings File: /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv
+No seismic zone specificed, Assuming seismic zone 4.
+GETRV - FALSE
+No seismic zone specificed, Assuming seismic zone 4.
+GETRV - FALSE
+No seismic zone specificed, Assuming seismic zone 4.
+GETRV - FALSE
+No seismic zone specificed, Assuming seismic zone 4.
+GETRV - FALSE
+6
+accel_X
+accel_Y
+accel_X
+accel_Y
+
+
+         OpenSees -- Open System For Earthquake Engineering Simulation
+                 Pacific Earthquake Engineering Research Center
+                        Version 2.5.0 (rev 6248) 32-Bit
+
+      (c) Copyright 1999-2016 The Regents of the University of California
+                              All Rights Reserved
+  (Copyright and Disclaimer @ http://www.berkeley.edu/OpenSees/copyright.html)
+
+
+6
+accel_X
+accel_Y
+accel_X
+accel_Y
+WARNING ZeroLength::setDomain(): Element 1 has L= 3.24919, which is greater than the tolerance
+WARNING ZeroLength::setDomain(): Element 2 has L= 3.24919, which is greater than the tolerance
+6
+accel_X
+accel_Y
+accel_X
+accel_Y
+
+
+         OpenSees -- Open System For Earthquake Engineering Simulation
+                 Pacific Earthquake Engineering Research Center
+                        Version 2.5.0 (rev 6248) 32-Bit
+
+      (c) Copyright 1999-2016 The Regents of the University of California
+                              All Rights Reserved
+  (Copyright and Disclaimer @ http://www.berkeley.edu/OpenSees/copyright.html)
+
+
+
+
+         OpenSees -- Open System For Earthquake Engineering Simulation
+                 Pacific Earthquake Engineering Research Center
+                        Version 2.5.0 (rev 6248) 32-Bit
+
+      (c) Copyright 1999-2016 The Regents of the University of California
+                              All Rights Reserved
+  (Copyright and Disclaimer @ http://www.berkeley.edu/OpenSees/copyright.html)
+
+
+WARNING ZeroLength::setDomain(): Element 1 has L= 3.46144, which is greater than the tolerance
+WARNING ZeroLength::setDomain(): Element 2 has L= 3.46143, which is greater than the tolerance
+WARNING ZeroLength::setDomain(): Element 1 has L= 2.96508, which is greater than the tolerance
+WARNING ZeroLength::setDomain(): Element 2 has L= 2.96508, which is greater than the tolerance
+6
+accel_X
+accel_Y
+accel_X
+accel_Y
+
+
+         OpenSees -- Open System For Earthquake Engineering Simulation
+                 Pacific Earthquake Engineering Research Center
+                        Version 2.5.0 (rev 6248) 32-Bit
+
+      (c) Copyright 1999-2016 The Regents of the University of California
+                              All Rights Reserved
+  (Copyright and Disclaimer @ http://www.berkeley.edu/OpenSees/copyright.html)
+
+
+WARNING ZeroLength::setDomain(): Element 1 has L= 3.0973, which is greater than the tolerance
+WARNING ZeroLength::setDomain(): Element 2 has L= 3.09731, which is greater than the tolerance
+num args: 5
+num args: 5
+num args: 5
+FEMAP58-LU: HI
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FEMAP58-LU: HI
+FEMAP58-LU: HI
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.021a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2061.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/num args: 5
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.021a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2061.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.021a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2061.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: F1012.001 needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: pathFC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves//home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FEMAP58-LU: HI
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: Unable to deal with EDP type 'Effective Drift' - B1044.091, using 'Story Drift Ratio' instead.
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: pathFC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves//home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: F1012.001 needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: F1012.001 needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: Unable to deal with EDP type 'Effective Drift' - B1044.091, using 'Story Drift Ratio' instead.
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: pathWarning: D2022.021a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves//home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2061.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: Unable to deal with EDP type 'Effective Drift' - B1044.091, using 'Story Drift Ratio' instead.
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: F1012.001 needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: Unable to deal with EDP type 'Effective Drift' - B1044.091, using 'Story Drift Ratio' instead.
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/1.599500 3.536430 3.733720 0.006537 0.004274 0.000092 NUM_EDP= 0
+1.599500 2.141640 2.921060 0.017054 0.010384 0.000686 NUM_EDP= 0
+1.599500 2.923360 2.661700 0.010443 0.006499 0.003540 NUM_EDP= 0
+1.599500 3.432330 2.985490 0.012118 0.006715 0.002897 NUM_EDP= 0
+NUM_EDP= 6
+1.599500 2.923360 2.661700 0.010443 0.006499 0.003540 
+1.599500 3.432330 2.985490 0.012118 0.006715 0.002897 
+1.599500 3.536430 3.733720 0.006537 0.004274 0.000092 
+1.599500 2.141640 2.921060 0.017054 0.010384 0.000686 
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/GenericBimDatabase" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/Workflow/AnchorageM7.0/buildings11-16.json" "-buildingsFile" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv" "-Max" "16" "-Min" "11" 
+
+"python3" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/NNGM.py" "-filenameBIM" "15-BIM.json" "-filenameEVENT" "15-EVENT.json" "-recordsFolder" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageM7GM/" "-groundMotions" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageM7GMs.json" 
+
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/MDOF-LU" "-filenameBIM" "15-BIM.json" "-filenameEVENT" "15-EVENT.json" "-filenameSAM" "15-SAM.json" "-hazusData" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/HazusData.txt" 
+
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/StandardEarthquakeEDP" "-filenameBIM" "15-BIM.json" "-filenameEVENT" "15-EVENT.json" "-filenameSAM" "15-SAM.json" "-filenameEDP" "15-EDP.json" 
+
+"python" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/OpenSeesSimulation.py" "-filenameBIM" "15-BIM.json" "-filenameSAM" "15-SAM.json" "-filenameEVENT" "15-EVENT.json" "-filenameEDP" "15-EDP.json" "-filenameSIM" "15-SIM.json" 
+
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/FEMAP58_LU" "-filenameBIM" "15-BIM.json" "-filenameEDP" "15-EDP.json" "-filenameLOSS" "15-DL.json" "-filenameSettings" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/settings.ini" "-pathNormative" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/normative/" "-pathCurves" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/" 
+
+
+################################################################################
+command line:
+python3 /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/NNGM.py -filenameBIM 16-BIM.json -filenameEVENT 16-EVENT.json -recordsFolder /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageM7GM/ -groundMotions /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageM7GMs.json -getRV
+
+################################################################################
+output from process:
+
+
+################################################################################
+command line:
+/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/MDOF-LU -filenameBIM 16-BIM.json -filenameEVENT 16-EVENT.json -filenameSAM 16-SAM.json -hazusData /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/HazusData.txt -getRV
+
+################################################################################
+output from process:
+
+
+################################################################################
+command line:
+/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/StandardEarthquakeEDP -filenameBIM 16-BIM.json -filenameEVENT 16-EVENT.json -filenameSAM 16-SAM.json -filenameEDP 16-EDP.json -getRV
+
+################################################################################
+output from process:
+GETRV - TRUE
+
+
+################################################################################
+command line:
+python /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/OpenSeesSimulation.py -filenameBIM 16-BIM.json -filenameSAM 16-SAM.json -filenameEVENT 16-EVENT.json -filenameEDP 16-EDP.json -filenameSIM 16-SIM.json -getRV
+
+################################################################################
+output from process:
+filenameBIM: 16-BIM.json
+filenameSAM: 16-SAM.json
+filenameEVENT: 16-EVENT.json
+filenameSIMULATION: 16-SIM.json
+
+
+################################################################################
+command line:
+python /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/DakotaFEM.py -filenameBIM 16-BIM.json -filenameSAM 16-SAM.json -filenameEVENT 16-EVENT.json -filenameEDP 16-EDP.json -filenameLOSS 16-DL.json -filenameSIM 16-SIM.json -driverFile 16-driver -keepSamples True -seed 1 -concurrency 4 -samples 4
+
+################################################################################
+output from process:
+Buildings File: /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv
+Buildings File: Buildings File: /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv
+/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv
+Buildings File: /home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv
+No seismic zone specificed, Assuming seismic zone 4.
+GETRV - FALSE
+No seismic zone specificed, Assuming seismic zone 4.
+GETRV - FALSE
+No seismic zone specificed, Assuming seismic zone 4.
+GETRV - FALSE
+No seismic zone specificed, Assuming seismic zone 4.
+GETRV - FALSE
+6
+accel_X
+accel_Y
+accel_X
+accel_Y
+
+
+         OpenSees -- Open System For Earthquake Engineering Simulation
+                 Pacific Earthquake Engineering Research Center
+                        Version 2.5.0 (rev 6248) 32-Bit
+
+      (c) Copyright 1999-2016 The Regents of the University of California
+                              All Rights Reserved
+  (Copyright and Disclaimer @ http://www.berkeley.edu/OpenSees/copyright.html)
+
+
+WARNING ZeroLength::setDomain(): Element 1 has L= 3.24919, which is greater than the tolerance
+6
+accel_X
+accel_Y
+accel_X
+accel_Y
+
+
+         OpenSees -- Open System For Earthquake Engineering Simulation
+                 Pacific Earthquake Engineering Research Center
+                        Version 2.5.0 (rev 6248) 32-Bit
+
+      (c) Copyright 1999-2016 The Regents of the University of California
+                              All Rights Reserved
+  (Copyright and Disclaimer @ http://www.berkeley.edu/OpenSees/copyright.html)
+
+
+6
+accel_X
+accel_Y
+accel_X
+accel_Y
+WARNING ZeroLength::setDomain(): Element 1 has L= 3.46144, which is greater than the tolerance
+
+
+         OpenSees -- Open System For Earthquake Engineering Simulation
+                 Pacific Earthquake Engineering Research Center
+                        Version 2.5.0 (rev 6248) 32-Bit
+
+      (c) Copyright 1999-2016 The Regents of the University of California
+                              All Rights Reserved
+  (Copyright and Disclaimer @ http://www.berkeley.edu/OpenSees/copyright.html)
+
+
+WARNING ZeroLength::setDomain(): Element 1 has L= 3.0973, which is greater than the tolerance
+6
+accel_X
+accel_Y
+accel_X
+accel_Y
+
+
+         OpenSees -- Open System For Earthquake Engineering Simulation
+                 Pacific Earthquake Engineering Research Center
+                        Version 2.5.0 (rev 6248) 32-Bit
+
+      (c) Copyright 1999-2016 The Regents of the University of California
+                              All Rights Reserved
+  (Copyright and Disclaimer @ http://www.berkeley.edu/OpenSees/copyright.html)
+
+
+WARNING ZeroLength::setDomain(): Element 1 has L= 2.96508, which is greater than the tolerance
+num args: 5
+FEMAP58-LU: HI
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.021a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2061.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: F1012.001 needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: Unable to deal with EDP type 'Effective Drift' - B1044.091, using 'Story Drift Ratio' instead.
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/num args: 5
+FEMAP58-LU: HI
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.021a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2061.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: F1012.001 needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: Unable to deal with EDP type 'Effective Drift' - B1044.091, using 'Story Drift Ratio' instead.
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/num args: 5
+FEMAP58-LU: HI
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/num args: 5
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.021a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2061.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FEMAP58-LU: HI
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: pathFC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves//home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: F1012.001 needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2022.021a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: Unable to deal with EDP type 'Effective Drift' - B1044.091, using 'Story Drift Ratio' instead.
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: D2061.011a needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: F1012.001 needs user-defined data
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/Warning: Unable to deal with EDP type 'Effective Drift' - B1044.091, using 'Story Drift Ratio' instead.
+FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/FC: path/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/1.599500 3.245110 0.005239 0.002490 NUM_EDP= 0
+1.599500 3.217190 0.005446 0.002194 NUM_EDP= 0
+1.599500 3.160050 0.004120 0.000455 NUM_EDP= 0
+1.599500 3.027170 0.006197 0.001559 NUM_EDP= 0
+NUM_EDP= 4
+1.599500 3.245110 0.005239 0.002490 
+1.599500 3.217190 0.005446 0.002194 
+1.599500 3.160050 0.004120 0.000455 
+1.599500 3.027170 0.006197 0.001559 
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/GenericBimDatabase" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/Workflow/AnchorageM7.0/buildings11-16.json" "-buildingsFile" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv" "-Max" "16" "-Min" "11" 
+
+"python3" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/NNGM.py" "-filenameBIM" "16-BIM.json" "-filenameEVENT" "16-EVENT.json" "-recordsFolder" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageM7GM/" "-groundMotions" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageM7GMs.json" 
+
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/MDOF-LU" "-filenameBIM" "16-BIM.json" "-filenameEVENT" "16-EVENT.json" "-filenameSAM" "16-SAM.json" "-hazusData" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/HazusData.txt" 
+
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/StandardEarthquakeEDP" "-filenameBIM" "16-BIM.json" "-filenameEVENT" "16-EVENT.json" "-filenameSAM" "16-SAM.json" "-filenameEDP" "16-EDP.json" 
+
+"python" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/OpenSeesSimulation.py" "-filenameBIM" "16-BIM.json" "-filenameSAM" "16-SAM.json" "-filenameEVENT" "16-EVENT.json" "-filenameEDP" "16-EDP.json" "-filenameSIM" "16-SIM.json" 
+
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/FEMAP58_LU" "-filenameBIM" "16-BIM.json" "-filenameEDP" "16-EDP.json" "-filenameLOSS" "16-DL.json" "-filenameSettings" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/settings.ini" "-pathNormative" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/normative/" "-pathCurves" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/" 
+
+
+################################################################################
+command line:
+/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/ReadDLs 11 16 DLs11-16.csv
+
+################################################################################
+output from process:
+
+
+################################################################################
+End of Log
+################################################################################

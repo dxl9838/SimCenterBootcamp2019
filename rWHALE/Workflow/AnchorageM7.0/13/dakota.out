@@ -1,0 +1,225 @@
+Dakota version 6.9 released Jul 18 2019.
+Repository revision 32b6d4be (2018-11-12) built Jul 18 2019 20:00:20.
+Running serial Dakota executable in serial mode.
+Start time: Thu Jul 25 20:35:41 2019
+
+-----------------------
+Begin DAKOTA input file
+dakota.in
+-----------------------
+environment
+tabular_data
+tabular_data_file = 'dakotaTab.out'
+
+method
+sampling,
+samples=4
+seed=1,
+sample_type random
+
+
+variables,
+normal_uncertain = 3
+means = 6.0 1.0 1.0 
+std_deviations = 0.33334 0.1 0.1 
+descriptors = 'height' 'kFactor' 'dampFactor' 
+
+
+interface,
+fork asynch evaluation_concurrency = 4
+analysis_driver = 'workflow_driver' 
+parameters_file = 'params.in' 
+results_file = 'results.out' 
+work_directory directory_tag 
+copy_files = 'templatedir/*' 
+named 'workdir' file_save directory_save
+aprepro 
+
+responses, 
+response_functions = 6
+response_descriptors = '1-PFA-1-1' '1-PFA-2-1' '1-PFA-3-1' '1-PID-1-1' '1-PID-2-1' '1-RD-3-1' 
+no_gradients
+no_hessians
+
+---------------------
+End DAKOTA input file
+---------------------
+
+Using Dakota input file 'dakota.in'
+Writing new restart file 'dakota.rst'.
+
+>>>>> Executing environment.
+
+>>>>> Running random_sampling iterator.
+
+NonD random Samples = 4 Seed (user-specified) = 1
+
+---------------------
+Begin Evaluation    1
+---------------------
+Parameters for evaluation 1:
+                      6.4983805531e+00 height
+                      9.4822964806e-01 kFactor
+                      8.6735092276e-01 dampFactor
+
+(Asynchronous job 1 added to queue)
+
+---------------------
+Begin Evaluation    2
+---------------------
+Parameters for evaluation 2:
+                      6.9228734163e+00 height
+                      8.8646982061e-01 kFactor
+                      9.2810600811e-01 dampFactor
+
+(Asynchronous job 2 added to queue)
+
+---------------------
+Begin Evaluation    3
+---------------------
+Parameters for evaluation 3:
+                      6.1946057991e+00 height
+                      1.3102495155e+00 kFactor
+                      9.7377924804e-01 dampFactor
+
+(Asynchronous job 3 added to queue)
+
+---------------------
+Begin Evaluation    4
+---------------------
+Parameters for evaluation 4:
+                      5.9301593190e+00 height
+                      6.3150659307e-01 kFactor
+                      8.9495511117e-01 dampFactor
+
+(Asynchronous job 4 added to queue)
+
+Blocking synchronize of 4 asynchronous evaluations
+First pass: initiating 4 local asynchronous jobs
+Initiating evaluation 1
+nonblocking fork: workflow_driver params.in results.out
+Initiating evaluation 2
+nonblocking fork: workflow_driver params.in results.out
+Initiating evaluation 3
+nonblocking fork: workflow_driver params.in results.out
+Initiating evaluation 4
+nonblocking fork: workflow_driver params.in results.out
+Waiting on completed jobs
+Evaluation 3 has completed
+Waiting on completed jobs
+Evaluation 4 has completed
+Waiting on completed jobs
+Evaluation 2 has completed
+Waiting on completed jobs
+Evaluation 1 has completed
+
+Active response data for evaluation 1:
+Active set vector = { 1 1 1 1 1 1 }
+                      1.5995000000e+00 1-PFA-1-1
+                      2.9234100000e+00 1-PFA-2-1
+                      2.6616900000e+00 1-PFA-3-1
+                      1.0443200000e-02 1-PID-1-1
+                      6.4990200000e-03 1-PID-2-1
+                      3.5396000000e-03 1-RD-3-1
+
+
+Active response data for evaluation 2:
+Active set vector = { 1 1 1 1 1 1 }
+                      1.5995000000e+00 1-PFA-1-1
+                      3.4323100000e+00 1-PFA-2-1
+                      2.9854800000e+00 1-PFA-3-1
+                      1.2117700000e-02 1-PID-1-1
+                      6.7152800000e-03 1-PID-2-1
+                      2.8970000000e-03 1-RD-3-1
+
+
+Active response data for evaluation 3:
+Active set vector = { 1 1 1 1 1 1 }
+                      1.5995000000e+00 1-PFA-1-1
+                      3.5364700000e+00 1-PFA-2-1
+                      3.7337400000e+00 1-PFA-3-1
+                      6.5370000000e-03 1-PID-1-1
+                      4.2738800000e-03 1-PID-2-1
+                      9.1628500000e-05 1-RD-3-1
+
+
+Active response data for evaluation 4:
+Active set vector = { 1 1 1 1 1 1 }
+                      1.5995000000e+00 1-PFA-1-1
+                      2.1416700000e+00 1-PFA-2-1
+                      2.9210600000e+00 1-PFA-3-1
+                      1.7053600000e-02 1-PID-1-1
+                      1.0384300000e-02 1-PID-2-1
+                      6.8589300000e-04 1-RD-3-1
+
+<<<<< Function evaluation summary: 4 total (4 new, 0 duplicate)
+-----------------------------------------------------------------------------
+Statistics based on 4 samples:
+
+Sample moment statistics for each response function:
+                            Mean           Std Dev          Skewness          Kurtosis
+     1-PFA-1-1  1.5995000000e+00  0.0000000000e+00  0.0000000000e+00 -3.0000000000e+00
+     1-PFA-2-1  3.0084650000e+00  6.3692013866e-01 -1.1056784772e+00  1.6321932538e-01
+     1-PFA-3-1  3.0754925000e+00  4.6060609617e-01  1.4322577571e+00  2.6216151444e+00
+     1-PID-1-1  1.1537875000e-02  4.3576172169e-03  3.3535269658e-01  8.5259929959e-01
+     1-PID-2-1  6.9681200000e-03  2.5306914632e-03  8.3052230130e-01  1.8548707270e+00
+      1-RD-3-1  1.8035303750e-03  1.6722574458e-03  1.8086921435e-02 -4.6926969766e+00
+
+95% confidence intervals for each response function:
+                    LowerCI_Mean      UpperCI_Mean    LowerCI_StdDev    UpperCI_StdDev
+     1-PFA-1-1  1.5995000000e+00  1.5995000000e+00  0.0000000000e+00  0.0000000000e+00
+     1-PFA-2-1  1.9949829290e+00  4.0219470710e+00  3.6080860057e-01  2.3747868479e+00
+     1-PFA-3-1  2.3425654155e+00  3.8084195845e+00  2.6092853858e-01  1.7173916051e+00
+     1-PID-1-1  4.6039335941e-03  1.8471816406e-02  2.4685446015e-03  1.6247581803e-02
+     1-PID-2-1  2.9412251516e-03  1.0995014848e-02  1.4336102596e-03  9.4358027610e-03
+      1-RD-3-1 -8.5740438996e-04  4.4644651400e-03  9.4731636228e-04  6.2350909441e-03
+
+
+At least one correlation coefficient is nan or inf. This commonly occurs when
+discrete variables (including histogram variables) are present, a response is
+completely insensitive to variables (response variance equal to 0), there are
+fewer samples than variables, or some samples are approximately collinear.
+
+Simple Correlation Matrix among all inputs and outputs:
+                   height      kFactor   dampFactor    1-PFA-1-1    1-PFA-2-1    1-PFA-3-1    1-PID-1-1    1-PID-2-1     1-RD-3-1 
+      height  1.00000e+00 
+     kFactor  1.17126e-01  1.00000e+00 
+  dampFactor -7.39780e-03  6.97568e-01  1.00000e+00 
+   1-PFA-1-1         -nan         -nan         -nan         -nan 
+   1-PFA-2-1  6.28580e-01  8.21629e-01  6.62880e-01         -nan  1.00000e+00 
+   1-PFA-3-1 -2.55326e-01  7.56821e-01  9.53057e-01         -nan  5.43642e-01  1.00000e+00 
+   1-PID-1-1 -2.45609e-01 -9.81808e-01 -5.75719e-01         -nan -8.50627e-01 -6.21585e-01  1.00000e+00 
+   1-PID-2-1 -3.80019e-01 -9.60631e-01 -5.97543e-01         -nan -9.20468e-01 -5.95996e-01  9.87904e-01  1.00000e+00 
+    1-RD-3-1  7.57083e-01 -2.37312e-01 -6.38003e-01         -nan  1.19135e-01 -7.66447e-01  5.16905e-02 -2.33649e-02  1.00000e+00 
+
+Partial Correlation Matrix between input and output:
+                1-PFA-1-1    1-PFA-2-1    1-PFA-3-1    1-PID-1-1    1-PID-2-1     1-RD-3-1 
+      height         -nan  1.00000e+00 -1.00000e+00 -1.00000e+00 -1.00000e+00  1.00000e+00 
+     kFactor         -nan  1.00000e+00  1.00000e+00 -1.00000e+00 -1.00000e+00  1.00000e+00 
+  dampFactor         -nan  1.00000e+00  1.00000e+00  1.00000e+00  1.00000e+00 -1.00000e+00 
+
+Simple Rank Correlation Matrix among all inputs and outputs:
+                   height      kFactor   dampFactor    1-PFA-1-1    1-PFA-2-1    1-PFA-3-1    1-PID-1-1    1-PID-2-1     1-RD-3-1 
+      height  1.00000e+00 
+     kFactor  2.00000e-01  1.00000e+00 
+  dampFactor  0.00000e+00  4.00000e-01  1.00000e+00 
+   1-PFA-1-1         -nan         -nan         -nan         -nan 
+   1-PFA-2-1  4.00000e-01  8.00000e-01  8.00000e-01         -nan  1.00000e+00 
+   1-PFA-3-1  0.00000e+00  4.00000e-01  1.00000e+00         -nan  8.00000e-01  1.00000e+00 
+   1-PID-1-1 -2.00000e-01 -1.00000e+00 -4.00000e-01         -nan -8.00000e-01 -4.00000e-01  1.00000e+00 
+   1-PID-2-1 -2.00000e-01 -1.00000e+00 -4.00000e-01         -nan -8.00000e-01 -4.00000e-01  1.00000e+00  1.00000e+00 
+    1-RD-3-1  6.00000e-01 -2.00000e-01 -8.00000e-01         -nan -4.00000e-01 -8.00000e-01  2.00000e-01  2.00000e-01  1.00000e+00 
+
+Partial Rank Correlation Matrix between input and output:
+                1-PFA-1-1    1-PFA-2-1    1-PFA-3-1    1-PID-1-1    1-PID-2-1     1-RD-3-1 
+      height         -nan  1.00000e+00         -nan         -nan         -nan  1.00000e+00 
+     kFactor         -nan  1.00000e+00         -nan -1.00000e+00 -1.00000e+00         -inf 
+  dampFactor         -nan  1.00000e+00  1.00000e+00         -nan         -nan -1.00000e+00 
+
+-----------------------------------------------------------------------------
+
+<<<<< Iterator random_sampling completed.
+<<<<< Environment execution completed.
+DAKOTA execution time in seconds:
+  Total CPU        =    0.02505 [parent =   0.025047, child =      3e-06]
+  Total wall clock =    2.90428

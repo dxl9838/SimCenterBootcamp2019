@@ -1,0 +1,11 @@
+perl dpreproSimCenter params.in bim.j 16-BIM.json
+perl dpreproSimCenter params.in sam.j 16-SAM.json
+perl dpreproSimCenter params.in evt.j 16-EVENT.json
+perl dpreproSimCenter params.in edp.j 16-EDP.json
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/GenericBimDatabase" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/Workflow/AnchorageM7.0/buildings11-16.json" "-buildingsFile" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageBuildings.csv" "-Max" "16" "-Min" "11" 
+"python3" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/NNGM.py" "-filenameBIM" "16-BIM.json" "-filenameEVENT" "16-EVENT.json" "-recordsFolder" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageM7GM/" "-groundMotions" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/AnchorageM7GMs.json" 
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/MDOF-LU" "-filenameBIM" "16-BIM.json" "-filenameEVENT" "16-EVENT.json" "-filenameSAM" "16-SAM.json" "-hazusData" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/HazusData.txt" 
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/StandardEarthquakeEDP" "-filenameBIM" "16-BIM.json" "-filenameEVENT" "16-EVENT.json" "-filenameSAM" "16-SAM.json" "-filenameEDP" "16-EDP.json" 
+"python" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/OpenSeesSimulation.py" "-filenameBIM" "16-BIM.json" "-filenameSAM" "16-SAM.json" "-filenameEVENT" "16-EVENT.json" "-filenameEDP" "16-EDP.json" "-filenameSIM" "16-SIM.json" 
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/FEMAP58_LU" "-filenameBIM" "16-BIM.json" "-filenameEDP" "16-EDP.json" "-filenameLOSS" "16-DL.json" "-filenameSettings" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/settings.ini" "-pathNormative" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/normative/" "-pathCurves" "/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/data/ATCCurves/" 
+"/home/student/Documents/SimCenterBootcamp2019/rWHALE/build/bin/extractEDP" 16-EDP.json results.out 

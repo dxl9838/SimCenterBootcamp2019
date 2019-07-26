@@ -51,3 +51,4 @@ if(response.status_code == 200):
 #Exercise 3: Can we get PGA from USGS API for each building and include it in the output file
 #Let's request the PGA information
 responsePGA = requests.get("https://earthquake.usgs.gov/nshmp-haz-ws/hazard/E2008/WUS/-118.25/34.05/PGA/760")
+print (responsePGA.json())

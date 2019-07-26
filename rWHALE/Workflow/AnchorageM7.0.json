@@ -8,7 +8,7 @@
          "BuildingApplication": "GenericBimDatabase",
          "ApplicationData": {
                "Min": "11",
-               "Max":"13",
+               "Max":"16",
                "buildingsFile":"../build/data/AnchorageBuildings.csv"
             }
       },

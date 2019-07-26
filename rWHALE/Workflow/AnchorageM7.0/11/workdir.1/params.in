@@ -1,0 +1,15 @@
+                    { DAKOTA_VARS     =                      3 }
+                    { height          =  3.249190276557405e+00 }
+                    { kFactor         =  9.482296480552590e-01 }
+                    { dampFactor      =  8.673509227646479e-01 }
+                    { DAKOTA_FNS      =                      4 }
+                    { ASV_1:1-PFA-1-1 =                      1 }
+                    { ASV_2:1-PFA-2-1 =                      1 }
+                    { ASV_3:1-PID-1-1 =                      1 }
+                    { ASV_4:1-RD-2-1  =                      1 }
+                    { DAKOTA_DER_VARS =                      3 }
+                    { DVV_1:height    =                      1 }
+                    { DVV_2:kFactor   =                      2 }
+                    { DVV_3:dampFactor =                      3 }
+                    { DAKOTA_AN_COMPS =                      0 }
+                    { DAKOTA_EVAL_ID  =                      1 }

@@ -1,0 +1,166 @@
+1
+
+                                             * * * * * * * * *  L H S  * * * * * * * * *
+
+                                             LATIN HYPERCUBE AND RANDOM SAMPLING PROGRAM
+
+                                             * * * * * * * * * * * * * * * * * * * * * *
+
+
+    Run on  7/25/19 at 20:35:32.94 with LHS Version: 2.30 Release 1, Compiled May 31, 2001        
+
+
+0    Pecos::LHSDriver                                                                                 RANDOM SAMPLE
+
+    Random Seed =           1
+
+    Number of Variables =   3
+
+    Number of Observations =    4
+0   The sample was written to the file: LHS_samples.out
+0   Input was read from the file: 
+0   The sample input vectors will be printed along with their corresponding ranks.
+0   Histograms of the actual sample will be plotted for each input variable.
+0   The correlation matrices (raw data and rank correlations) will be printed.
+1
+
+    Pecos::LHSDriver                                                                                 RANDOM SAMPLE               
+
+    VARIABLE  DISTRIBUTION          RANGE            LABEL
+0       1     NORMAL WITH THE PARAMETERS BELOW                                                       
+                           MU =   3.00                   SIGMA =  0.167    
+0       2     NORMAL WITH THE PARAMETERS BELOW                                                       
+                           MU =   1.00                   SIGMA =  0.100    
+0       3     NORMAL WITH THE PARAMETERS BELOW                                                       
+                           MU =   1.00                   SIGMA =  0.100    
+1Pecos::LHSDriver                                                                                 RANDOM SAMPLE               
+0RANDOM SAMPLE INPUT VECTORS
+
+ RUN NO. X(1)      X(2)      X(3)
+0    1  3.25     0.948     0.867    
+0    2  3.46     0.886     0.928    
+0    3  3.10      1.31     0.974    
+0    4  2.97     0.632     0.895    
+1Pecos::LHSDriver                                                                                 RANDOM SAMPLE               
+0RANKS OF RANDOM SAMPLE INPUT VECTORS
+
+ RUN NO.    X(1)      X(2)      X(3)
+0    1        3.        3.        1.
+0    2        4.        2.        3.
+0    3        2.        4.        4.
+0    4        1.        1.        2.
+1   Pecos::LHSDriver                                                                                 RANDOM SAMPLE               
+0  HISTOGRAM FOR VARIABLE NO.  1     NORMAL DISTRIBUTION
+
+     Midpoint          Freq.
+
+   2.9624999E+00         1    X
+   2.9874999E+00         0
+   3.0124999E+00         0
+   3.0374999E+00         0
+   3.0624999E+00         0
+   3.0874999E+00         1    X
+   3.1124999E+00         0
+   3.1374999E+00         0
+   3.1624999E+00         0
+   3.1874999E+00         0
+   3.2124999E+00         0
+   3.2374999E+00         1    X
+   3.2624999E+00         0
+   3.2874999E+00         0
+   3.3124999E+00         0
+   3.3374999E+00         0
+   3.3624999E+00         0
+   3.3874999E+00         0
+   3.4124999E+00         0
+   3.4374999E+00         0
+   3.4624999E+00         1    X
+0                        4
+
+
+      Min            Max           Range           Mean          Median        Variance
+
+   2.9650797E+00  3.4614367E+00  4.9635705E-01  3.1932524E+00  3.1732466E+00  4.5440325E-02
+
+1   Pecos::LHSDriver                                                                                 RANDOM SAMPLE               
+0  HISTOGRAM FOR VARIABLE NO.  2     NORMAL DISTRIBUTION
+
+     Midpoint          Freq.
+
+   6.2899999E-01         1    X
+   6.6299999E-01         0
+   6.9699998E-01         0
+   7.3099998E-01         0
+   7.6499998E-01         0
+   7.9899998E-01         0
+   8.3299998E-01         0
+   8.6699998E-01         0
+   9.0099998E-01         1    X
+   9.3499998E-01         1    X
+   9.6899998E-01         0
+   1.0030000E+00         0
+   1.0370000E+00         0
+   1.0710000E+00         0
+   1.1050000E+00         0
+   1.1390000E+00         0
+   1.1730000E+00         0
+   1.2070000E+00         0
+   1.2410000E+00         0
+   1.2750000E+00         0
+   1.3090000E+00         1    X
+0                        4
+
+
+      Min            Max           Range           Mean          Median        Variance
+
+   6.3150659E-01  1.3102495E+00  6.7874292E-01  9.4411389E-01  9.1734973E-01  7.8372799E-02
+
+1   Pecos::LHSDriver                                                                                 RANDOM SAMPLE               
+0  HISTOGRAM FOR VARIABLE NO.  3     NORMAL DISTRIBUTION
+
+     Midpoint          Freq.
+
+   8.6654998E-01         1    X
+   8.7184998E-01         0
+   8.7714998E-01         0
+   8.8244998E-01         0
+   8.8774998E-01         0
+   8.9304998E-01         1    X
+   8.9834998E-01         0
+   9.0364998E-01         0
+   9.0894998E-01         0
+   9.1424998E-01         0
+   9.1954998E-01         0
+   9.2484998E-01         0
+   9.3014998E-01         1    X
+   9.3544998E-01         0
+   9.4074998E-01         0
+   9.4604998E-01         0
+   9.5134998E-01         0
+   9.5664998E-01         0
+   9.6194998E-01         0
+   9.6724998E-01         0
+   9.7254998E-01         1    X
+0                        4
+
+
+      Min            Max           Range           Mean          Median        Variance
+
+   8.6735092E-01  9.7377925E-01  1.0642833E-01  9.1604782E-01  9.1153056E-01  2.0982026E-03
+
+1Pecos::LHSDriver                                                                                 RANDOM SAMPLE               
+0CORRELATIONS AMONG INPUT VARIABLES CREATED BY THE RANDOM SAMPLE FOR RAW DATA                                        PAGE   1
+0    1  1.0000
+0    2  0.1171  1.0000
+0    3 -0.0074  0.6976  1.0000
+0            1       2       3
+0VARIABLES
+0THE VARIANCE INFLATION FACTOR FOR THIS MATRIX IS  2.01
+1Pecos::LHSDriver                                                                                 RANDOM SAMPLE               
+0CORRELATIONS AMONG INPUT VARIABLES CREATED BY THE RANDOM SAMPLE FOR RANK DATA                                        PAGE   1
+0    1  1.0000
+0    2  0.2000  1.0000
+0    3  0.0000  0.4000  1.0000
+0            1       2       3
+0VARIABLES
+0THE VARIANCE INFLATION FACTOR FOR THIS MATRIX IS  1.25
